@@ -4,25 +4,14 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
-
-
-dependencies {
-    implementation("androidx.navigation:navigation-compose:2.7.7")
-    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
-    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
-    implementation("androidx.compose.material:material-icons-extended")
-
-}
-
-
 android {
-    namespace = "com.example.myapplication" // ✅ Correct package name
+    namespace = "com.example.myapplication"
+//    applicationId = "com.example.myapplication"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.myapplication" // ✅ Must match the namespace
+        applicationId = "com.example.myapplication"
         minSdk = 24
-        //noinspection EditedTargetSdkVersion
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -50,9 +39,15 @@ android {
     buildFeatures {
         compose = true
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10" // Or whatever version matches your Compose BOM
+    }
+
 }
 
 dependencies {
+    // Core and Compose
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -61,7 +56,16 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation("androidx.compose.material:material-icons-extended")
 
+    // Navigation
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+
+    // QR Code (ZXing)
+    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
+    implementation("androidx.appcompat:appcompat:1.6.1") // Required for ZXing
+
+    // Tests
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

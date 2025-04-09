@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.theme
+package com.example.awslpu.ui.theme
 
 
 import android.content.Context

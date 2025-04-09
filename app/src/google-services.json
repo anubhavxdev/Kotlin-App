@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "326265568369",
+    "project_id": "awslpu-ea67a",
+    "storage_bucket": "awslpu-ea67a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326265568369:android:4f90d7cc94f494dc652fd0",
+        "android_client_info": {
+          "package_name": "com.example.awslpu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7xKelRf5hNP7FHUu77Rh_8INDQb7jgLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
